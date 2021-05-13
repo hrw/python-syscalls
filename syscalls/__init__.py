@@ -121,3 +121,12 @@ class syscalls_dict(dict):
                 raise NoSuchSystemCall
             else:
                 raise NotSupportedSystemCall
+
+    def arch(self, arch, key):
+        try:
+            return (self.syscalls['archs'][arch][key])
+        except KeyError:
+            if key not in self.syscalls['names']:
+                raise NoSuchSystemCall
+            else:
+                raise NotSupportedSystemCall
