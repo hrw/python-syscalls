@@ -11,7 +11,7 @@ Quite simple:
 
 import syscalls
 
-system_calls = syscalls.syscalls_dict()
+system_calls = syscalls.syscalls()
 
 for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
     try:
@@ -21,9 +21,18 @@ for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
     except syscalls.NotSupportedSystemCall:
         print(f"System call '{test_call}' is not supported on this "
               "architecture")
+
+for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
+    try:
+        print(f"System call '{test_call}' on arm64 has number: "
+              f"{system_calls.get(test_call, 'arm64')}")
+    except syscalls.NoSuchSystemCall:
+        print(f"No such system call '{test_call}' on any architecture")
+    except syscalls.NotSupportedSystemCall:
+        print(f"System call '{test_call}' is not supported on this "
+              "architecture")
 ```
 
 # Plans
 
-- add all files required to create wheel
 - add to Pypi
