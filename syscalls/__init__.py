@@ -114,17 +114,15 @@ class syscalls_dict(dict):
         self.default_arch = os.uname().machine
 
     def __getitem__(self, key):
-        try:
-            return (self.syscalls['archs'][self.default_arch][key])
-        except KeyError:
-            if key not in self.syscalls['names']:
-                raise NoSuchSystemCall
-            else:
-                raise NotSupportedSystemCall
+        return self.get(key)
 
-    def arch(self, arch, key):
+    def get(self, key, arch=''):
+
+        if arch == '':
+            arch = self.default_arch
+
         try:
-            return (self.syscalls['archs'][arch][key])
+            return self.syscalls['archs'][arch][key]
         except KeyError:
             if key not in self.syscalls['names']:
                 raise NoSuchSystemCall
