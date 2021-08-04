@@ -32,7 +32,3 @@ for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
         print(f"System call '{test_call}' is not supported on this "
               "architecture")
 ```
-
-# Plans
-
-- add to Pypi
