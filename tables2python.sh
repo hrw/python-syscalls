@@ -1,8 +1,8 @@
 #!/bin/bash
 
-for table in tables/syscalls-*
+for table in data/tables/syscalls-*
 do
-	tmp=${table#tables/}
+	tmp=${table#data/tables/}
 	arch=${tmp#syscalls-}
 	
 	echo "#!/usr/bin/python3" > syscalls/tables/${arch}.py
@@ -17,6 +17,6 @@ done
 echo "#!/usr/bin/python3" >syscalls/tables/names.py
 echo "" >>syscalls/tables/names.py
 echo "syscalls_names = [" >>syscalls/tables/names.py
-sed -e 's/^\(.*\)/    "\1",/g' syscall-names.text >>syscalls/tables/names.py
+sed -e 's/^\(.*\)/    "\1",/g' data/syscall-names.text >>syscalls/tables/names.py
 echo "]" >>syscalls/tables/names.py
 
