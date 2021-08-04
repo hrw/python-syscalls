@@ -3,7 +3,7 @@
 import os
 import syscalls
 
-system_calls = syscalls.syscalls_dict()
+system_calls = syscalls.syscalls()
 
 for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
     try:

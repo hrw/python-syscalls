@@ -58,7 +58,7 @@ class NotSupportedSystemCall(Exception):
     pass
 
 
-class syscalls_dict(dict):
+class syscalls(dict):
     def __init__(self):
         self.syscalls = {
             'names': syscalls_names,
