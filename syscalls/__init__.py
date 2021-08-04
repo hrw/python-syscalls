@@ -128,3 +128,9 @@ class syscalls(dict):
                 raise NoSuchSystemCall
             else:
                 raise NotSupportedSystemCall
+
+    def archs(self):
+        return self.syscalls['archs'].keys()
+
+    def names(self):
+        return self.syscalls['names']
