@@ -50,10 +50,15 @@ from syscalls.tables.xtensa import syscalls_xtensa
 
 
 class NoSuchSystemCall(Exception):
+    """Exception will be called if asked for not existing system call.
+    """
     pass
 
 
 class NotSupportedSystemCall(Exception):
+    """Exception will be called if asked for system call not supported
+    on requested architecture.
+    """
     pass
 
 
@@ -112,10 +117,16 @@ class syscalls(dict):
         self.default_arch = os.uname().machine
 
     def __getitem__(self, syscall_name: str) -> int:
+        """Returns number for requested system call.
+        Host architecture would be used.
+        """
         return self.get(syscall_name)
 
     def get(self, syscall_name: str, arch: str='') -> int:
-
+        """Returns number for requested system call.
+        Architecture can be provided by second argument (optional, host
+        architecture would be used by default).
+        """
         if arch == '':
             arch = self.default_arch
 
@@ -128,7 +139,12 @@ class syscalls(dict):
                 raise NotSupportedSystemCall
 
     def archs(self) -> dict:
-        return self.syscalls['archs'].keys()
+        """Returns list of architectures supported by class.
+        Some entries are no longer supported by mainline Linux kernel.
+        """
+        return list(self.syscalls['archs'].keys())
 
     def names(self) -> dict:
+        """Returns list of system calls known by class.
+        """
         return self.syscalls['names']
