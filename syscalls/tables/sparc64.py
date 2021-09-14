@@ -225,6 +225,7 @@ syscalls_sparc64 = {
     "preadv2": 358,
     "prlimit64": 331,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 338,
     "process_vm_writev": 339,
     "pselect6": 297,

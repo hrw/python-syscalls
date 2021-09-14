@@ -214,6 +214,7 @@ syscalls_s390x = {
     "preadv2": 376,
     "prlimit64": 334,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 340,
     "process_vm_writev": 341,
     "pselect6": 301,

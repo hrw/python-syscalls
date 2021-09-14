@@ -331,6 +331,7 @@ syscalls_alpha = {
     "preadv2": 520,
     "prlimit64": 496,
     "process_madvise": 550,
+    "process_mrelease": 558,
     "process_vm_readv": 504,
     "process_vm_writev": 505,
     "pselect6": 463,

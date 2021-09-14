@@ -251,6 +251,7 @@ syscalls_microblaze = {
     "preadv2": 393,
     "prlimit64": 370,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 377,
     "process_vm_writev": 378,
     "pselect6": 308,

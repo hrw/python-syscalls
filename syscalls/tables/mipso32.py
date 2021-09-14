@@ -236,6 +236,7 @@ syscalls_mipso32 = {
     "preadv2": 4361,
     "prlimit64": 4338,
     "process_madvise": 4440,
+    "process_mrelease": 4448,
     "process_vm_readv": 4345,
     "process_vm_writev": 4346,
     "pselect6": 4301,

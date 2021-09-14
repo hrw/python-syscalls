@@ -219,6 +219,7 @@ syscalls_xtensa = {
     "preadv2": 346,
     "prlimit64": 330,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 322,
     "process_vm_writev": 323,
     "pselect6": 272,

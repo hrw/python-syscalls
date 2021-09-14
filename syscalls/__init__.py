@@ -3,7 +3,6 @@
 import os
 
 from syscalls.tables.names import syscalls_names
-from syscalls.tables.aarch64 import syscalls_aarch64
 from syscalls.tables.alpha import syscalls_alpha
 from syscalls.tables.arc import syscalls_arc
 from syscalls.tables.arm64 import syscalls_arm64
@@ -63,7 +62,6 @@ class syscalls(dict):
         self.syscalls = {
             'names': syscalls_names,
             'archs': {
-                'aarch64': syscalls_aarch64,
                 'alpha': syscalls_alpha,
                 'arc': syscalls_arc,
                 'arm64': syscalls_arm64,

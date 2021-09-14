@@ -237,6 +237,7 @@ syscalls_arm = {
     "preadv2": 392,
     "prlimit64": 369,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 376,
     "process_vm_writev": 377,
     "pselect6": 335,

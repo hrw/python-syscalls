@@ -192,6 +192,7 @@ syscalls_nios2 = {
     "preadv2": 286,
     "prlimit64": 261,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 270,
     "process_vm_writev": 271,
     "pselect6": 72,

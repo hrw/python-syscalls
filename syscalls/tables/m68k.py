@@ -247,6 +247,7 @@ syscalls_m68k = {
     "preadv2": 377,
     "prlimit64": 339,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 345,
     "process_vm_writev": 346,
     "pselect6": 301,

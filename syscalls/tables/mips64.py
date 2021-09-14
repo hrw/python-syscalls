@@ -212,6 +212,7 @@ syscalls_mips64 = {
     "preadv2": 5321,
     "prlimit64": 5297,
     "process_madvise": 5440,
+    "process_mrelease": 5448,
     "process_vm_readv": 5304,
     "process_vm_writev": 5305,
     "pselect6": 5260,

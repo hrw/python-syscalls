@@ -203,6 +203,7 @@ madvise	5027
 mbind	5227
 membarrier	5318
 memfd_create	5314
+memfd_secret
 memory_ordering
 migrate_pages	5246
 mincore	5026
@@ -374,7 +375,6 @@ pciconfig_read
 pciconfig_write
 perf_event_open	5292
 perfctr
-perfmonctl
 personality	5132
 pidfd_getfd	5438
 pidfd_open	5434
@@ -394,6 +394,7 @@ preadv	5289
 preadv2	5321
 prlimit64	5297
 process_madvise	5440
+process_mrelease	5448
 process_vm_readv	5304
 process_vm_writev	5305
 pselect6	5260

@@ -203,6 +203,7 @@ madvise	9437404
 mbind	9437503
 membarrier	9437573
 memfd_create	9437569
+memfd_secret
 memory_ordering
 migrate_pages	9437584
 mincore	9437403
@@ -374,7 +375,6 @@ pciconfig_read	9437456
 pciconfig_write	9437457
 perf_event_open	9437548
 perfctr
-perfmonctl
 personality	9437320
 pidfd_getfd	9437622
 pidfd_open	9437618
@@ -394,6 +394,7 @@ preadv	9437545
 preadv2	9437576
 prlimit64	9437553
 process_madvise	9437624
+process_mrelease	9437632
 process_vm_readv	9437560
 process_vm_writev	9437561
 pselect6	9437519

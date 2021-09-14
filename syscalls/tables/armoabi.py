@@ -241,6 +241,7 @@ syscalls_armoabi = {
     "preadv2": 9437576,
     "prlimit64": 9437553,
     "process_madvise": 9437624,
+    "process_mrelease": 9437632,
     "process_vm_readv": 9437560,
     "process_vm_writev": 9437561,
     "pselect6": 9437519,
