@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-import syscalls
+import system_calls
 
 popular_syscalls = {}
 
-system_calls = syscalls.syscalls()
+system_calls = system_calls.syscalls()
 
 for syscall_name in system_calls.names():
     counter = 0
@@ -13,7 +13,7 @@ for syscall_name in system_calls.names():
         try:
             system_calls.get(syscall_name, arch)
             counter += 1
-        except syscalls.NotSupportedSystemCall:
+        except system_calls.NotSupportedSystemCall:
             pass
 
     try:

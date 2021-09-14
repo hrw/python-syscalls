@@ -6,9 +6,9 @@ Print syscalls in 'popularity' order.
 From entries supported on one architecture to supported on every one.
 """
 
-import syscalls
+import system_calls
 
-system_calls = syscalls.syscalls()
+system_calls = system_calls.syscalls()
 
 syscalls_count = {}
 
@@ -21,7 +21,7 @@ for syscall_name in system_calls.names():
             system_calls.get(syscall_name, arch)
             syscalls_count[syscall_name]["amount"] += 1
             syscalls_count[syscall_name]["archs"].append(arch)
-        except syscalls.NotSupportedSystemCall:
+        except system_calls.NotSupportedSystemCall:
             pass
 
 for amount in range(1, len(system_calls.archs()) + 1):

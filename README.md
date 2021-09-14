@@ -9,16 +9,16 @@ Quite simple:
 ```python
 #!/usr/bin/python3
 
-import syscalls
+import system_calls
 
-system_calls = syscalls.syscalls()
+system_calls = system_calls.syscalls()
 
 for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
     try:
         print(f"System call '{test_call}' has number: {system_calls[test_call]}")
-    except syscalls.NoSuchSystemCall:
+    except system_calls.NoSuchSystemCall:
         print(f"No such system call '{test_call}' on any architecture")
-    except syscalls.NotSupportedSystemCall:
+    except system_calls.NotSupportedSystemCall:
         print(f"System call '{test_call}' is not supported on this "
               "architecture")
 
@@ -26,9 +26,9 @@ for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
     try:
         print(f"System call '{test_call}' on arm64 has number: "
               f"{system_calls.get(test_call, 'arm64')}")
-    except syscalls.NoSuchSystemCall:
+    except system_calls.NoSuchSystemCall:
         print(f"No such system call '{test_call}' on any architecture")
-    except syscalls.NotSupportedSystemCall:
+    except system_calls.NotSupportedSystemCall:
         print(f"System call '{test_call}' is not supported on this "
               "architecture")
 ```
