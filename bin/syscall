@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 
+import enum
 import os
 import syscalls
 import sys
+
+
+class errors(enum.IntEnum):
+    NOT_SUPPORTED_SYSTEM_CALL = -1
+    NO_SUCH_SYSTEM_CALL = -2
 
 
 def help():
@@ -32,9 +38,9 @@ def search_for_syscall_by_name(syscall_name):
     try:
         syscall_number = system_calls.get(syscall_name, syscall_arch)
     except syscalls.NotSupportedSystemCall:
-        syscall_number = -1
+        syscall_number = errors.NOT_SUPPORTED_SYSTEM_CALL
     except syscalls.NoSuchSystemCall:
-        syscall_number = -2
+        syscall_number = errors.NO_SUCH_SYSTEM_CALL
 
     return syscall_number
 
@@ -66,7 +72,7 @@ if syscall_number >= 0 and syscall_name is not None:
 elif syscall_name is None:
     print(f"On {syscall_arch} there is no system call with {syscall_number} "
           f"number.")
-elif syscall_number == -1:
+elif syscall_number == errors.NOT_SUPPORTED_SYSTEM_CALL:
     print(f"On {syscall_arch} system call {syscall_name}() is not supported.")
-elif syscall_number == -2:
+elif syscall_number == errors.NO_SUCH_SYSTEM_CALL:
     print(f"There is no such system call as {syscall_name}().")
