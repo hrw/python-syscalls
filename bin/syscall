@@ -1,0 +1,72 @@
+#!/usr/bin/env python3
+
+import os
+import syscalls
+import sys
+
+
+def help():
+    print("""This tool takes two arguments:
+
+- system call name or number
+- architecture (optional, host one will be used if missing)
+
+Examples:
+  syscall openat arm64
+  syscall 56
+  syscall 123 mipso32
+""")
+    sys.exit()
+
+
+def search_for_syscall_by_number(syscall_number):
+    for syscall_name in system_calls.names():
+        try:
+            if syscall_number == system_calls.get(syscall_name, syscall_arch):
+                return syscall_name
+        except syscalls.NotSupportedSystemCall:
+            pass
+
+
+def search_for_syscall_by_name(syscall_name):
+    try:
+        syscall_number = system_calls.get(syscall_name, syscall_arch)
+    except syscalls.NotSupportedSystemCall:
+        syscall_number = -1
+    except syscalls.NoSuchSystemCall:
+        syscall_number = -2
+
+    return syscall_number
+
+
+if len(sys.argv) == 1 or sys.argv[1] in ["-h", "--help"]:
+    help()
+
+syscall_arch = os.uname().machine
+
+system_calls = syscalls.syscalls()
+
+if len(sys.argv) == 3:
+    if sys.argv[2] in system_calls.archs():
+        syscall_arch = sys.argv[2]
+    else:
+        print(f"Architecture {sys.argv[2]} is not supported.")
+        sys.exit()
+
+if sys.argv[1].isnumeric():
+    syscall_number = int(sys.argv[1])
+    syscall_name = search_for_syscall_by_number(syscall_number)
+else:
+    syscall_name = sys.argv[1]
+    syscall_number = search_for_syscall_by_name(syscall_name)
+
+if syscall_number >= 0 and syscall_name is not None:
+    print(f"On {syscall_arch} system call number {syscall_number} "
+          f"is {syscall_name}()")
+elif syscall_name is None:
+    print(f"On {syscall_arch} there is no system call with {syscall_number} "
+          f"number.")
+elif syscall_number == -1:
+    print(f"On {syscall_arch} system call {syscall_name}() is not supported.")
+elif syscall_number == -2:
+    print(f"There is no such system call as {syscall_name}().")

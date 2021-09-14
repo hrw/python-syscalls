@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="system-calls",
-    version="5.15.0",
+    version="5.15.1",
     author="Marcin Juszkiewicz",
     author_email="marcin-python@juszkiewicz.com.pl",
     description="Python module to check for system call numbers",
@@ -25,4 +25,5 @@ setuptools.setup(
     packages=["syscalls", "syscalls/tables/"],
     python_requires=">=3.6",
     license_files=["LICENSE"],
+    scripts=["bin/syscall"],
 )
