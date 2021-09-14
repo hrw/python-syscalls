@@ -12,10 +12,16 @@ class errors(enum.IntEnum):
 
 
 def help():
-    print("""This tool takes two arguments:
+    print("""usage: syscall [-h] syscall arch
 
-- system call name or number
-- architecture (optional, host one will be used if missing)
+Check system call number/name.
+
+positional arguments:
+  syscall     system call number/name
+  arch        requested architecture
+
+options:
+  -h, --help  show this help message and exit
 
 Examples:
   syscall openat arm64
