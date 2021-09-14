@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -z $TABLES_DIR ]; then
+	cp -r $TABLES_DIR/syscall-names.text $TABLES_DIR/tables data/
+fi
+
 for table in data/tables/syscalls-*
 do
 	tmp=${table#data/tables/}
