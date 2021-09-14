@@ -32,9 +32,9 @@ Examples:
 
 
 def search_for_syscall_by_number(syscall_number):
-    for syscall_name in system_calls.names():
+    for syscall_name in syscalls.names():
         try:
-            if syscall_number == system_calls.get(syscall_name, syscall_arch):
+            if syscall_number == syscalls.get(syscall_name, syscall_arch):
                 return syscall_name
         except system_calls.NotSupportedSystemCall:
             pass
@@ -42,7 +42,7 @@ def search_for_syscall_by_number(syscall_number):
 
 def search_for_syscall_by_name(syscall_name):
     try:
-        syscall_number = system_calls.get(syscall_name, syscall_arch)
+        syscall_number = syscalls.get(syscall_name, syscall_arch)
     except system_calls.NotSupportedSystemCall:
         syscall_number = errors.NOT_SUPPORTED_SYSTEM_CALL
     except system_calls.NoSuchSystemCall:
@@ -56,10 +56,10 @@ if len(sys.argv) == 1 or sys.argv[1] in ["-h", "--help"]:
 
 syscall_arch = os.uname().machine
 
-system_calls = system_calls.syscalls()
+syscalls = system_calls.syscalls()
 
 if len(sys.argv) == 3:
-    if sys.argv[2] in system_calls.archs():
+    if sys.argv[2] in syscalls.archs():
         syscall_arch = sys.argv[2]
     else:
         print(f"Architecture {sys.argv[2]} is not supported.")
