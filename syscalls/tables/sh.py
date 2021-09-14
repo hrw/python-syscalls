@@ -241,6 +241,7 @@ syscalls_sh = {
     "preadv2": 381,
     "prlimit64": 339,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 365,
     "process_vm_writev": 366,
     "pselect6": 308,

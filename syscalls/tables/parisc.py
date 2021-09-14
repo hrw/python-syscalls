@@ -226,6 +226,7 @@ syscalls_parisc = {
     "preadv2": 347,
     "prlimit64": 321,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 330,
     "process_vm_writev": 331,
     "pselect6": 273,

@@ -245,6 +245,7 @@ syscalls_powerpc = {
     "preadv2": 380,
     "prlimit64": 325,
     "process_madvise": 440,
+    "process_mrelease": 448,
     "process_vm_readv": 351,
     "process_vm_writev": 352,
     "pselect6": 280,

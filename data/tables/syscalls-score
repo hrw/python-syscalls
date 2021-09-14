@@ -267,7 +267,6 @@ pciconfig_read
 pciconfig_write
 perf_event_open	241
 perfctr
-perfmonctl
 personality	92
 pipe	1040
 pipe2	59
