@@ -1,34 +1,33 @@
 # What is it?
 
-This is very simple code to get system call numbers from Python level.
+This is very simple code to get system call number/name and availability from
+Python level. Reuses data from my [system call
+table](https://marcin.juszkiewicz.com.pl/download/tables/syscalls.html) page.
 
-# Usage
+# Usage in Python
 
-Quite simple:
+Please check "bin/syscall" script and files in "examples/" directory.
 
-```python
-#!/usr/bin/python3
+# Packages
 
-import system_calls
+## Debian (and derived)
 
-system_calls = system_calls.syscalls()
+I provide source and binary package to install at
+https://debian.juszkiewicz.com.pl/python-system-calls/ site.
 
-for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
-    try:
-        print(f"System call '{test_call}' has number: {system_calls[test_call]}")
-    except system_calls.NoSuchSystemCall:
-        print(f"No such system call '{test_call}' on any architecture")
-    except system_calls.NotSupportedSystemCall:
-        print(f"System call '{test_call}' is not supported on this "
-              "architecture")
+Tested under:
 
-for test_call in ['openat', 'osf_uadmin', 'nosuchcall']:
-    try:
-        print(f"System call '{test_call}' on arm64 has number: "
-              f"{system_calls.get(test_call, 'arm64')}")
-    except system_calls.NoSuchSystemCall:
-        print(f"No such system call '{test_call}' on any architecture")
-    except system_calls.NotSupportedSystemCall:
-        print(f"System call '{test_call}' is not supported on this "
-              "architecture")
-```
+- Debian 10 'buster'
+- Debian 11 'bullseye'
+- Debian 'sid'
+- Ubuntu 20.04 'focal'
+
+## Fedora
+
+I provide package for Fedora 34, 35 and rawhide in
+[COPR](https://copr.fedorainfracloud.org/coprs/hrw/system-calls/).
+
+## Other distributions
+
+I do not plan to work on packaging for other distributions. Package is available
+on Pypi so `pip install system-calls` should work.
