@@ -26,4 +26,5 @@ setuptools.setup(
     python_requires=">=3.6",
     license_files=["LICENSE"],
     scripts=["bin/syscall"],
+    data_files=[('man/man1', ['man/syscall.1'])],
 )
