@@ -14,11 +14,11 @@ class errors(enum.IntEnum):
 def help():
     print("""usage: syscall [-h] syscall arch
 
-Check system call number/name.
+Check for Linux system call number/name and availability.
 
 positional arguments:
   syscall     system call number/name
-  arch        requested architecture
+  arch        requested architecture (optional)
 
 options:
   -h, --help  show this help message and exit
