@@ -90,6 +90,7 @@ syscalls_arm = {
     "ftruncate64": 194,
     "futex": 240,
     "futex_time64": 422,
+    "futex_waitv": 449,
     "futimesat": 326,
     "get_mempolicy": 320,
     "get_robust_list": 339,

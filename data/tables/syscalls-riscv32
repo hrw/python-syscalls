@@ -40,7 +40,7 @@ clock_settime
 clock_settime64	404
 clone	220
 clone2
-clone3
+clone3	435
 close	57
 close_range	436
 connect	203
@@ -106,6 +106,7 @@ ftruncate
 ftruncate64	46
 futex
 futex_time64	422
+futex_waitv	449
 futimesat
 get_kernel_syms
 get_mempolicy	236

@@ -91,6 +91,7 @@ syscalls_armoabi = {
     "ftruncate64": 9437378,
     "futex": 9437424,
     "futex_time64": 9437606,
+    "futex_waitv": 9437633,
     "futimesat": 9437510,
     "get_mempolicy": 9437504,
     "get_robust_list": 9437523,

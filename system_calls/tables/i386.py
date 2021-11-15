@@ -93,6 +93,7 @@ syscalls_i386 = {
     "ftruncate64": 194,
     "futex": 240,
     "futex_time64": 422,
+    "futex_waitv": 449,
     "futimesat": 299,
     "get_kernel_syms": 130,
     "get_mempolicy": 275,

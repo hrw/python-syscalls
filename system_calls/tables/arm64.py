@@ -64,6 +64,7 @@ syscalls_arm64 = {
     "fsync": 82,
     "ftruncate": 46,
     "futex": 98,
+    "futex_waitv": 449,
     "get_mempolicy": 236,
     "get_robust_list": 100,
     "getcpu": 168,

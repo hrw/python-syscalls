@@ -71,6 +71,7 @@ syscalls_nios2 = {
     "ftruncate64": 46,
     "futex": 98,
     "futex_time64": 422,
+    "futex_waitv": 449,
     "get_mempolicy": 236,
     "get_robust_list": 100,
     "getcpu": 168,

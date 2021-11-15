@@ -79,6 +79,7 @@ syscalls_x86_64 = {
     "fsync": 74,
     "ftruncate": 77,
     "futex": 202,
+    "futex_waitv": 449,
     "futimesat": 261,
     "get_kernel_syms": 177,
     "get_mempolicy": 239,

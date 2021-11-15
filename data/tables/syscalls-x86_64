@@ -106,6 +106,7 @@ ftruncate	77
 ftruncate64
 futex	202
 futex_time64
+futex_waitv	449
 futimesat	261
 get_kernel_syms	177
 get_mempolicy	239

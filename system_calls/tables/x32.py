@@ -75,6 +75,7 @@ syscalls_x32 = {
     "fsync": 1073741898,
     "ftruncate": 1073741901,
     "futex": 1073742026,
+    "futex_waitv": 1073742273,
     "futimesat": 1073742085,
     "get_mempolicy": 1073742063,
     "get_robust_list": 1073742355,
