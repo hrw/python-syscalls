@@ -1,4 +1,3 @@
-
 syscalls_names = [
     "_llseek",
     "_newselect",

@@ -1,4 +1,3 @@
-
 import os
 
 from system_calls.tables.names import syscalls_names
@@ -49,8 +48,8 @@ from system_calls.tables.xtensa import syscalls_xtensa
 
 
 class NoSuchSystemCall(Exception):
-    """Exception will be called if asked for not existing system call.
-    """
+    """Exception will be called if asked for not existing system call."""
+
     pass
 
 
@@ -58,58 +57,59 @@ class NotSupportedSystemCall(Exception):
     """Exception will be called if asked for system call not supported
     on requested architecture.
     """
+
     pass
 
 
 class syscalls(dict):
     def __init__(self):
         self.syscalls = {
-            'names': syscalls_names,
-            'archs': {
-                'alpha': syscalls_alpha,
-                'arc': syscalls_arc,
-                'arm64': syscalls_arm64,
-                'armoabi': syscalls_armoabi,
-                'arm': syscalls_arm,
-                'avr32': syscalls_avr32,
-                'blackfin': syscalls_blackfin,
-                'c6x': syscalls_c6x,
-                'cris': syscalls_cris,
-                'csky': syscalls_csky,
-                'frv': syscalls_frv,
-                'h8300': syscalls_h8300,
-                'hexagon': syscalls_hexagon,
-                'i386': syscalls_i386,
-                'ia64': syscalls_ia64,
-                'm32r': syscalls_m32r,
-                'm68k': syscalls_m68k,
-                'metag': syscalls_metag,
-                'microblaze': syscalls_microblaze,
-                'mips64n32': syscalls_mips64n32,
-                'mips64': syscalls_mips64,
-                'mipso32': syscalls_mipso32,
-                'mn10300': syscalls_mn10300,
-                'nds32': syscalls_nds32,
-                'nios2': syscalls_nios2,
-                'openrisc': syscalls_openrisc,
-                'parisc': syscalls_parisc,
-                'powerpc64': syscalls_powerpc64,
-                'powerpc': syscalls_powerpc,
-                'riscv32': syscalls_riscv32,
-                'riscv64': syscalls_riscv64,
-                's390': syscalls_s390,
-                's390x': syscalls_s390x,
-                'score': syscalls_score,
-                'sh64': syscalls_sh64,
-                'sh': syscalls_sh,
-                'sparc64': syscalls_sparc64,
-                'sparc': syscalls_sparc,
-                'tile64': syscalls_tile64,
-                'tile': syscalls_tile,
-                'unicore32': syscalls_unicore32,
-                'x32': syscalls_x32,
-                'x86_64': syscalls_x86_64,
-                'xtensa': syscalls_xtensa,
+            "names": syscalls_names,
+            "archs": {
+                "alpha": syscalls_alpha,
+                "arc": syscalls_arc,
+                "arm64": syscalls_arm64,
+                "armoabi": syscalls_armoabi,
+                "arm": syscalls_arm,
+                "avr32": syscalls_avr32,
+                "blackfin": syscalls_blackfin,
+                "c6x": syscalls_c6x,
+                "cris": syscalls_cris,
+                "csky": syscalls_csky,
+                "frv": syscalls_frv,
+                "h8300": syscalls_h8300,
+                "hexagon": syscalls_hexagon,
+                "i386": syscalls_i386,
+                "ia64": syscalls_ia64,
+                "m32r": syscalls_m32r,
+                "m68k": syscalls_m68k,
+                "metag": syscalls_metag,
+                "microblaze": syscalls_microblaze,
+                "mips64n32": syscalls_mips64n32,
+                "mips64": syscalls_mips64,
+                "mipso32": syscalls_mipso32,
+                "mn10300": syscalls_mn10300,
+                "nds32": syscalls_nds32,
+                "nios2": syscalls_nios2,
+                "openrisc": syscalls_openrisc,
+                "parisc": syscalls_parisc,
+                "powerpc64": syscalls_powerpc64,
+                "powerpc": syscalls_powerpc,
+                "riscv32": syscalls_riscv32,
+                "riscv64": syscalls_riscv64,
+                "s390": syscalls_s390,
+                "s390x": syscalls_s390x,
+                "score": syscalls_score,
+                "sh64": syscalls_sh64,
+                "sh": syscalls_sh,
+                "sparc64": syscalls_sparc64,
+                "sparc": syscalls_sparc,
+                "tile64": syscalls_tile64,
+                "tile": syscalls_tile,
+                "unicore32": syscalls_unicore32,
+                "x32": syscalls_x32,
+                "x86_64": syscalls_x86_64,
+                "xtensa": syscalls_xtensa,
             },
         }
 
@@ -121,18 +121,18 @@ class syscalls(dict):
         """
         return self.get(syscall_name)
 
-    def get(self, syscall_name: str, arch: str = '') -> int:
+    def get(self, syscall_name: str, arch: str = "") -> int:
         """Returns number for requested system call.
         Architecture can be provided by second argument (optional, host
         architecture would be used by default).
         """
-        if arch == '':
+        if arch == "":
             arch = self.default_arch
 
         try:
-            return self.syscalls['archs'][arch][syscall_name]
+            return self.syscalls["archs"][arch][syscall_name]
         except KeyError:
-            if syscall_name not in self.syscalls['names']:
+            if syscall_name not in self.syscalls["names"]:
                 raise NoSuchSystemCall
             else:
                 raise NotSupportedSystemCall
@@ -141,9 +141,8 @@ class syscalls(dict):
         """Returns list of architectures supported by class.
         Some entries are no longer supported by mainline Linux kernel.
         """
-        return list(self.syscalls['archs'].keys())
+        return list(self.syscalls["archs"].keys())
 
     def names(self) -> dict:
-        """Returns list of system calls known by class.
-        """
-        return self.syscalls['names']
+        """Returns list of system calls known by class."""
+        return self.syscalls["names"]
