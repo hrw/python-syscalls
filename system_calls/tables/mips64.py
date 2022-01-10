@@ -79,6 +79,7 @@ syscalls_mips64 = {
     "fsync": 5072,
     "ftruncate": 5075,
     "futex": 5194,
+    "futex_waitv": 5449,
     "futimesat": 5251,
     "get_kernel_syms": 5170,
     "get_mempolicy": 5228,

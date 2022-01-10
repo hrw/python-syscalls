@@ -75,6 +75,7 @@ syscalls_ia64 = {
     "fsync": 1051,
     "ftruncate": 1098,
     "futex": 1230,
+    "futex_waitv": 1473,
     "futimesat": 1285,
     "get_mempolicy": 1260,
     "get_robust_list": 1299,

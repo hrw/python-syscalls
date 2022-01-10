@@ -86,6 +86,7 @@ syscalls_xtensa = {
     "ftruncate64": 29,
     "futex": 191,
     "futex_time64": 422,
+    "futex_waitv": 449,
     "futimesat": 298,
     "get_mempolicy": 264,
     "get_robust_list": 285,

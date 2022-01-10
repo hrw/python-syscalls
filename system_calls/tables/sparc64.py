@@ -83,6 +83,7 @@ syscalls_sparc64 = {
     "fsync": 95,
     "ftruncate": 130,
     "futex": 142,
+    "futex_waitv": 449,
     "futimesat": 288,
     "get_kernel_syms": 223,
     "get_mempolicy": 304,

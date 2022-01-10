@@ -79,6 +79,7 @@ syscalls_alpha = {
     "fsync": 95,
     "ftruncate": 130,
     "futex": 394,
+    "futex_waitv": 559,
     "futimesat": 454,
     "get_kernel_syms": 309,
     "get_mempolicy": 430,

@@ -87,6 +87,7 @@ syscalls_mips64n32 = {
     "ftruncate": 6075,
     "futex": 6194,
     "futex_time64": 6422,
+    "futex_waitv": 6449,
     "futimesat": 6255,
     "get_kernel_syms": 6170,
     "get_mempolicy": 6232,

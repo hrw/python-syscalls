@@ -80,6 +80,7 @@ syscalls_powerpc64 = {
     "fsync": 118,
     "ftruncate": 93,
     "futex": 221,
+    "futex_waitv": 449,
     "futimesat": 290,
     "get_kernel_syms": 130,
     "get_mempolicy": 260,

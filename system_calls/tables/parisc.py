@@ -89,6 +89,7 @@ syscalls_parisc = {
     "ftruncate64": 200,
     "futex": 210,
     "futex_time64": 422,
+    "futex_waitv": 449,
     "futimesat": 279,
     "get_mempolicy": 261,
     "get_robust_list": 290,

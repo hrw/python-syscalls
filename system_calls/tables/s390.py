@@ -92,6 +92,7 @@ syscalls_s390 = {
     "ftruncate64": 194,
     "futex": 238,
     "futex_time64": 422,
+    "futex_waitv": 449,
     "futimesat": 292,
     "get_kernel_syms": 130,
     "get_mempolicy": 269,

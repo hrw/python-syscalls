@@ -92,6 +92,7 @@ syscalls_mipso32 = {
     "ftruncate64": 4212,
     "futex": 4238,
     "futex_time64": 4422,
+    "futex_waitv": 4449,
     "futimesat": 4292,
     "get_kernel_syms": 4130,
     "get_mempolicy": 4269,

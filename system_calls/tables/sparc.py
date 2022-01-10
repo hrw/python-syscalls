@@ -93,6 +93,7 @@ syscalls_sparc = {
     "ftruncate64": 84,
     "futex": 142,
     "futex_time64": 422,
+    "futex_waitv": 449,
     "futimesat": 288,
     "get_kernel_syms": 223,
     "get_mempolicy": 304,
