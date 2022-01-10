@@ -24,8 +24,7 @@ Tested under:
 
 ## Fedora
 
-I provide package for Fedora 34, 35 and rawhide in
-[COPR](https://copr.fedorainfracloud.org/coprs/hrw/system-calls/).
+Package for Fedora 35 and rawhide is available in distribution repositories.
 
 ## Other distributions
 
