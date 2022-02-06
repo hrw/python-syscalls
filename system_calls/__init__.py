@@ -121,7 +121,7 @@ class syscalls(dict):
         """
         return self.get(syscall_name)
 
-    def get(self, syscall_name: str, arch: str = "") -> int:
+    def get(self, syscall_name: str, arch: str = "") -> int:  # type: ignore
         """Returns number for requested system call.
         Architecture can be provided by second argument (optional, host
         architecture would be used by default).
