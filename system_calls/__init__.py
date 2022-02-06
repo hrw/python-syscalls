@@ -137,12 +137,12 @@ class syscalls(dict):
             else:
                 raise NotSupportedSystemCall
 
-    def archs(self) -> dict:
+    def archs(self) -> list:
         """Returns list of architectures supported by class.
         Some entries are no longer supported by mainline Linux kernel.
         """
         return list(self.syscalls["archs"].keys())
 
-    def names(self) -> dict:
+    def names(self) -> list:
         """Returns list of system calls known by class."""
         return self.syscalls["names"]
