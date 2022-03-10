@@ -65,7 +65,7 @@ if len(sys.argv) == 3:
         syscall_arch = sys.argv[2]
     else:
         print(f"Architecture {sys.argv[2]} is not supported.")
-        sys.exit()
+        sys.exit(1)
 
 if sys.argv[1].isnumeric():
     syscall_number = int(sys.argv[1])
@@ -87,11 +87,14 @@ else:
     if syscall_name is None:
         print(f"On {syscall_arch} there is no system call with "
               f"{syscall_number} number.")
+        sys.exit(1)
     else:
         try:
             syscall_number = syscalls.get(syscall_name, syscall_arch)
         except system_calls.NotSupportedSystemCall:
             print(f"System call {syscall_name}() "
                   f"is not supported on {syscall_arch}.")
+            sys.exit(1)
         except system_calls.NoSuchSystemCall:
             print(f"There is no such system call as {syscall_name}().")
+            sys.exit(1)
