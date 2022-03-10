@@ -12,7 +12,7 @@ class errors(enum.IntEnum):
 
 
 def help():
-    print("""usage: syscall [-h] syscall arch
+    print("""usage: syscall [--help|-h] [--dump] syscall arch
 
 Check for Linux system call number/name and availability.
 
@@ -22,11 +22,13 @@ positional arguments:
 
 options:
   -h, --help  show this help message and exit
+  --dump      print all system calls for the given architecture
 
 Examples:
   syscall openat arm64
   syscall 56
   syscall 123 mipso32
+  syscall --dump arm64
 """)
     sys.exit()
 
@@ -40,15 +42,13 @@ def search_for_syscall_by_number(syscall_number):
             pass
 
 
-def search_for_syscall_by_name(syscall_name):
-    try:
-        syscall_number = syscalls.get(syscall_name, syscall_arch)
-    except system_calls.NotSupportedSystemCall:
-        syscall_number = errors.NOT_SUPPORTED_SYSTEM_CALL
-    except system_calls.NoSuchSystemCall:
-        syscall_number = errors.NO_SUCH_SYSTEM_CALL
-
-    return syscall_number
+def search_for_syscalls_by_name(syscall_name):
+    for name in syscalls.names():
+        if syscall_name in name:
+            try:
+                syscalls_list[name] = syscalls.get(name, syscall_arch)
+            except system_calls.NotSupportedSystemCall:
+                pass
 
 
 if len(sys.argv) == 1 or sys.argv[1] in ["-h", "--help"]:
@@ -57,6 +57,8 @@ if len(sys.argv) == 1 or sys.argv[1] in ["-h", "--help"]:
 syscall_arch = os.uname().machine
 
 syscalls = system_calls.syscalls()
+
+syscalls_list = {}
 
 if len(sys.argv) == 3:
     if sys.argv[2] in syscalls.archs():
@@ -68,17 +70,28 @@ if len(sys.argv) == 3:
 if sys.argv[1].isnumeric():
     syscall_number = int(sys.argv[1])
     syscall_name = search_for_syscall_by_number(syscall_number)
+    if syscall_name:
+        syscalls_list[syscall_name] = syscall_number
 else:
-    syscall_name = sys.argv[1]
-    syscall_number = search_for_syscall_by_name(syscall_name)
+    if "--dump" in sys.argv:
+        syscall_name = ""
+    else:
+        syscall_name = sys.argv[1]
+    search_for_syscalls_by_name(syscall_name)
 
-if syscall_number >= 0 and syscall_name is not None:
-    print(f"On {syscall_arch} system call number {syscall_number} "
-          f"is {syscall_name}()")
-elif syscall_name is None:
-    print(f"On {syscall_arch} there is no system call with {syscall_number} "
-          f"number.")
-elif syscall_number == errors.NOT_SUPPORTED_SYSTEM_CALL:
-    print(f"On {syscall_arch} system call {syscall_name}() is not supported.")
-elif syscall_number == errors.NO_SUCH_SYSTEM_CALL:
-    print(f"There is no such system call as {syscall_name}().")
+
+if len(syscalls_list):
+    for syscall_name in syscalls_list:
+        print(f"{syscall_name: <24}\t\t{syscalls_list[syscall_name]}")
+else:
+    if syscall_name is None:
+        print(f"On {syscall_arch} there is no system call with "
+              f"{syscall_number} number.")
+    else:
+        try:
+            syscall_number = syscalls.get(syscall_name, syscall_arch)
+        except system_calls.NotSupportedSystemCall:
+            print(f"System call {syscall_name}() "
+                  f"is not supported on {syscall_arch}.")
+        except system_calls.NoSuchSystemCall:
+            print(f"There is no such system call as {syscall_name}().")
