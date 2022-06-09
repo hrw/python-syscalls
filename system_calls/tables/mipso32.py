@@ -301,6 +301,7 @@ syscalls_mipso32 = {
     "sendmsg": 4179,
     "sendto": 4180,
     "set_mempolicy": 4270,
+    "set_mempolicy_home_node": 4450,
     "set_robust_list": 4309,
     "set_thread_area": 4283,
     "set_tid_address": 4252,

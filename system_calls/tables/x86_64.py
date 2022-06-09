@@ -277,6 +277,7 @@ syscalls_x86_64 = {
     "sendmsg": 46,
     "sendto": 44,
     "set_mempolicy": 238,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 273,
     "set_thread_area": 205,
     "set_tid_address": 218,

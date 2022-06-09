@@ -473,6 +473,7 @@ sendmmsg	329
 sendmsg	183
 sendto	82
 set_mempolicy	262
+set_mempolicy_home_node	450
 set_robust_list	289
 set_thread_area
 set_tid_address	237

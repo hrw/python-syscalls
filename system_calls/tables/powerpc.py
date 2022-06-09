@@ -312,6 +312,7 @@ syscalls_powerpc = {
     "sendmsg": 341,
     "sendto": 335,
     "set_mempolicy": 261,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 300,
     "set_tid_address": 232,
     "setdomainname": 121,

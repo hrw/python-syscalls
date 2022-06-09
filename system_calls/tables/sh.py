@@ -305,6 +305,7 @@ syscalls_sh = {
     "sendmsg": 355,
     "sendto": 349,
     "set_mempolicy": 276,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 311,
     "set_tid_address": 258,
     "setdomainname": 121,

@@ -204,7 +204,7 @@ madvise	233
 mbind	235
 membarrier	283
 memfd_create	279
-memfd_secret
+memfd_secret	447
 memory_ordering
 migrate_pages	238
 mincore	232
@@ -473,6 +473,7 @@ sendmmsg	269
 sendmsg	211
 sendto	206
 set_mempolicy	237
+set_mempolicy_home_node	450
 set_robust_list	99
 set_thread_area
 set_tid_address	96

@@ -269,6 +269,7 @@ syscalls_x32 = {
     "sendmsg": 1073742342,
     "sendto": 1073741868,
     "set_mempolicy": 1073742062,
+    "set_mempolicy_home_node": 1073742274,
     "set_robust_list": 1073742354,
     "set_tid_address": 1073742042,
     "setdomainname": 1073741995,

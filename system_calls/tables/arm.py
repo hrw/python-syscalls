@@ -302,6 +302,7 @@ syscalls_arm = {
     "sendmsg": 296,
     "sendto": 290,
     "set_mempolicy": 321,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 338,
     "set_tid_address": 256,
     "setdomainname": 121,

@@ -270,6 +270,7 @@ syscalls_ia64 = {
     "sendmsg": 1205,
     "sendto": 1199,
     "set_mempolicy": 1261,
+    "set_mempolicy_home_node": 1474,
     "set_robust_list": 1298,
     "set_tid_address": 1233,
     "setdomainname": 1129,

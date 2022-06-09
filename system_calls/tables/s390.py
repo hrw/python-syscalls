@@ -311,6 +311,7 @@ syscalls_s390 = {
     "sendmsg": 370,
     "sendto": 369,
     "set_mempolicy": 270,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 304,
     "set_tid_address": 252,
     "setdomainname": 121,

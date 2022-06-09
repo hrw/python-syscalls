@@ -475,6 +475,7 @@ syscalls_names = [
     "sendmsg",
     "sendto",
     "set_mempolicy",
+    "set_mempolicy_home_node",
     "set_robust_list",
     "set_thread_area",
     "set_tid_address",

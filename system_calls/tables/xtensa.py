@@ -285,6 +285,7 @@ syscalls_xtensa = {
     "sendmsg": 106,
     "sendto": 110,
     "set_mempolicy": 265,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 284,
     "set_tid_address": 126,
     "setdomainname": 199,

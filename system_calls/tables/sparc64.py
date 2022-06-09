@@ -287,6 +287,7 @@ syscalls_sparc64 = {
     "sendmsg": 114,
     "sendto": 133,
     "set_mempolicy": 305,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 300,
     "set_tid_address": 166,
     "setdomainname": 163,

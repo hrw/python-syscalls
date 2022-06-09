@@ -392,6 +392,7 @@ syscalls_alpha = {
     "sendmsg": 114,
     "sendto": 133,
     "set_mempolicy": 431,
+    "set_mempolicy_home_node": 560,
     "set_robust_list": 466,
     "set_tid_address": 411,
     "setdomainname": 166,

@@ -311,6 +311,7 @@ syscalls_m68k = {
     "sendmsg": 367,
     "sendto": 366,
     "set_mempolicy": 270,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 304,
     "set_thread_area": 334,
     "set_tid_address": 253,

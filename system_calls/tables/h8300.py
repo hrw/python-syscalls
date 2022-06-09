@@ -236,6 +236,7 @@ syscalls_h8300 = {
     "sendmmsg": 269,
     "sendmsg": 211,
     "sendto": 206,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 99,
     "set_tid_address": 96,
     "setdomainname": 162,

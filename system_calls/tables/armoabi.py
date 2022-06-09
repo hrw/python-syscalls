@@ -308,6 +308,7 @@ syscalls_armoabi = {
     "sendmsg": 9437480,
     "sendto": 9437474,
     "set_mempolicy": 9437505,
+    "set_mempolicy_home_node": 9437634,
     "set_robust_list": 9437522,
     "set_tid_address": 9437440,
     "setdomainname": 9437305,

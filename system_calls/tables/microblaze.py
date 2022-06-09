@@ -319,6 +319,7 @@ syscalls_microblaze = {
     "sendmsg": 360,
     "sendto": 353,
     "set_mempolicy": 276,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 311,
     "set_thread_area": 243,
     "set_tid_address": 258,

@@ -291,6 +291,7 @@ syscalls_parisc = {
     "sendmsg": 183,
     "sendto": 82,
     "set_mempolicy": 262,
+    "set_mempolicy_home_node": 450,
     "set_robust_list": 289,
     "set_tid_address": 237,
     "setdomainname": 121,
