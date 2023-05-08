@@ -199,6 +199,7 @@ syscalls_riscv32 = {
     "request_key": 218,
     "restart_syscall": 128,
     "riscv_flush_icache": 259,
+    "riscv_hwprobe": 258,
     "rseq": 293,
     "rt_sigaction": 134,
     "rt_sigpending": 136,

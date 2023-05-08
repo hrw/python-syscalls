@@ -179,6 +179,7 @@ syscalls_s390 = {
     "mbind": 268,
     "membarrier": 356,
     "memfd_create": 350,
+    "memfd_secret": 447,
     "migrate_pages": 287,
     "mincore": 218,
     "mkdir": 39,

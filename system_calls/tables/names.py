@@ -429,6 +429,7 @@ syscalls_names = [
     "request_key",
     "restart_syscall",
     "riscv_flush_icache",
+    "riscv_hwprobe",
     "rmdir",
     "rseq",
     "rt_sigaction",

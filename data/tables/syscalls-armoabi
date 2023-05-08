@@ -427,6 +427,7 @@ renameat2	9437566
 request_key	9437494
 restart_syscall	9437184
 riscv_flush_icache
+riscv_hwprobe
 rmdir	9437224
 rseq	9437582
 rt_sigaction	9437358
