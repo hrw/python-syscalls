@@ -21,6 +21,7 @@ bpf	280
 brk	214
 cachectl
 cacheflush	245
+cachestat	451
 capget	90
 capset	91
 chdir	49
@@ -78,6 +79,7 @@ fanotify_mark	263
 fchdir	50
 fchmod	52
 fchmodat	53
+fchmodat2	452
 fchown	55
 fchown32
 fchownat	54
@@ -201,6 +203,7 @@ lsetxattr	6
 lstat
 lstat64
 madvise	233
+map_shadow_stack
 mbind	235
 membarrier	283
 memfd_create	279

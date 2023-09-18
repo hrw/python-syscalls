@@ -21,6 +21,7 @@ bpf	1073742145
 brk	1073741836
 cachectl
 cacheflush
+cachestat	1073742275
 capget	1073741949
 capset	1073741950
 chdir	1073741904
@@ -78,6 +79,7 @@ fanotify_mark	1073742125
 fchdir	1073741905
 fchmod	1073741915
 fchmodat	1073742092
+fchmodat2	1073742276
 fchown	1073741917
 fchown32
 fchownat	1073742084
@@ -201,6 +203,7 @@ lsetxattr	1073742013
 lstat	1073741830
 lstat64
 madvise	1073741852
+map_shadow_stack
 mbind	1073742061
 membarrier	1073742148
 memfd_create	1073742143
