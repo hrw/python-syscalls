@@ -19,8 +19,9 @@ Tested under:
 
 - Debian 10 'buster'
 - Debian 11 'bullseye'
-- Debian 'sid'
+- Debian 12 'bookworm'
 - Ubuntu 20.04 'focal'
+- Ubuntu 22.04 'jammy'
 
 ## Fedora
 
